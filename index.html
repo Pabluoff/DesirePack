@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="shortcut icon" href="img/favicon.PNG" type="image/x-icon">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo" style="display: flex;align-items: center;">
+            <span
+                style="color:#000000; font-size:26px; font-weight:500; letter-spacing: 1px;margin-left: 20px;">Desire<span
+                    style="color: #53a3ff;">Packs</span></span>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#content">Ínicio</a></li>
+            <li><a href="">Sobre</a></li>
+            <li><a href="#tinder">exclusivo</a></li>
+            <li><a href="">Parceiro</a></li>
+            <li><a href="">Contato</a></li>
+        </ul>
+    </nav>
+    <!-- Inicio -->
+    <section id="content">
+        <div class="container">
+            <h2>Bem-vindo ao DesirePacks</h2>
+            <p>Descubra uma variedade de conteúdos exclusivos que vão satisfazer seus desejos.</p>
+            <a id="subscribe-btn">acesso exclusivo!</a>
+        </div>
+    </section>
+    <!-- Carrossel de Imagens -->
+    <div class="carousel-container">
+        <div class="slides">
+            <div class="slide">
+                <img src="img/Modelo1.png" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="img/modelo2.png" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="img/modelo3.png" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="img/modelo4.png" alt="Slide 4">
+            </div>
+            <div class="slide">
+                <img src="img/modelo5.png" alt="Slide 5">
+            </div>
+            <div class="slide">
+                <img src="img/modelo6.png" alt="Slide 6">
+            </div>
+            <div class="slide">
+                <img src="img/modelo7.png" alt="Slide 7">
+            </div>
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+    <!-- Sobre -->
+    <section id="about">
+        <div class="container">
+            <h2>SOBRE NÓS</h2>
+            <p>Trabalhamos com criadores de conteúdos que passam pelo nosso sistema de verificação de identidade por
+                Inteligência Artificial para assim proporcionar a melhor experiência na fabricação de conteúdos de alta
+                qualidade. Temos compromisso de fornecer produtos inovadores. O mercado está sempre mudando, então é
+                fundamental nos mantermos sempre atualizados.</p>
+        </div>
+    </section>
+    <!-- Produtos -->
+    <section id="tinder">
+        <header>
+            <h2>Destaques da semana</h2>
+        </header>
+        <p class="like-message">Gostou do perfil? Clique no coração para acessar o pack do perfil desejado!</p>
+        <div class="cards-container">
+            <div class="card" id="card1">
+                <img src="img/modelo2.png" alt="Profile 1" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Nome 1</h3>
+                    <p class="description">Descrição do perfil 1.</p>
+                    <a href="link-do-conteudo" class="like-btn">&#x2764;</a>
+                    <button class="dislike-btn">&#x2716;</button>
+                </div>
+            </div>
+            <div class="card" id="card2">
+                <img src="img/modelo3.png" alt="Profile 2" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Nome 2</h3>
+                    <p class="description">Descrição do perfil 2.</p>
+                    <a href="link-do-conteudo" class="like-btn">&#x2764;</a>
+                    <button class="dislike-btn">&#x2716;</button>
+                </div>
+            </div>
+            <!-- Adicione mais cartões conforme necessário -->
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
