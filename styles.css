@@ -158,6 +158,74 @@ nav {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+
+/* modal idade */
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 100%;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.648);
+    backdrop-filter: blur(30px);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 80%;
+    transition: transform 0.3s ease;
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 33px;
+    margin-bottom: 10px;
+}
+
+.modal p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.confirm-btn {
+    background-color: transparent;
+    border: 2px solid #000000;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.confirm-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.confirm-btn:hover {
+    transform: scale(1.05);
+}
+
 /*Ínicio*/
 
 #content {
@@ -173,7 +241,7 @@ nav {
 }
 
 #content p {
-    font-size: 1.2rem;
+    font-size: 19px;
     margin-bottom: 30px;
     padding: 5px 20px;
 }
@@ -181,22 +249,23 @@ nav {
 #subscribe-btn {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #ff69b4;
+    background-color: #53a3ff;
     border: none;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
     animation: animate-outline 1s ease-out infinite;
+    text-decoration: none;
 }
 
 #subscribe-btn:hover {
-    background-color: #d63485;
+    background-color: #3986de;
 }
 
 @keyframes animate-outline {
     from {
-        outline: 0px solid #ff69b4c6;
+        outline: 0px solid #53a4ff;
     }
 
     to {
@@ -222,14 +291,40 @@ nav {
 }
 
 .slide {
+    position: relative;
     flex: 0 0 100%;
     overflow: hidden;
+}
+
+.slide::after {
+    content: "Desbloqueie o conteúdo";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    color: white;
+    z-index: 1;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.345);
+    z-index: 1;
 }
 
 .slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: blur(5px);
+    z-index: 0;
+    opacity: 0.8;
 }
 
 .prev-btn,
@@ -244,7 +339,7 @@ nav {
     cursor: pointer;
     border-radius: 5px;
     font-size: 20px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .prev-btn {
@@ -260,7 +355,6 @@ nav {
         height: 300px;
     }
 }
-
 
 /*Sobre*/
 
@@ -313,6 +407,7 @@ nav {
     color: #666;
     padding: 0px 40px;
     text-align: center;
+    font-weight: bolder;
 }
 
 .cards-container {
@@ -392,4 +487,96 @@ nav {
 
 .dislike-btn:hover {
     color: #000;
+}
+
+/* Contato */
+.contact {
+    background-color: #000000;
+    padding: 100px 0;
+    text-align: center;
+    color: #333;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #000;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #53a4ff;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 12px 25px;
+    border: none;
+    background-color: #53a4ff;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #3986de;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        max-width: 90%;
+    }
+}
+
+
+textarea {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.char-counter {
+    font-family: 'Poppins';
+    font-size: 12px;
+    position: absolute;
+    bottom: 28px;
+    right: 5px;
+    color: rgb(0, 255, 0);
+    text-shadow: 0.5px 0.5px 0 rgb(0, 0, 0), -0.5px -0.5px 0 rgb(0, 0, 0), 0.5px -0.5px 0 rgb(0, 0, 0), -0.5px 0.5px 0 rgb(0, 0, 0);
+}
+
+.char-counter.yellow {
+    color: rgb(255, 255, 0);
+}
+
+.char-counter.red {
+    color: rgb(255, 48, 48);
 }

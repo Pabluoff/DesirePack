@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="img/favicon.PNG" type="image/x-icon">
+    <link rel="icon" href="img/Logo.PNG">
+    <link rel="apple-touch-icon" href="img/Logo.PNG">
+    <link rel="shortcut icon" href="img/Logo.PNG" type="image/x-icon">
     <title>Home</title>
 </head>
 
@@ -24,18 +26,27 @@
         </div>
         <ul class="nav-links">
             <li><a href="#content">Ínicio</a></li>
-            <li><a href="">Sobre</a></li>
+            <li><a href="#about">Sobre</a></li>
             <li><a href="#tinder">exclusivo</a></li>
-            <li><a href="">Parceiro</a></li>
-            <li><a href="">Contato</a></li>
+            <li><a href="#contact">Parceiro</a></li>
+            <li><a href="#contact">Contato</a></li>
         </ul>
     </nav>
+    <!-- Confirmar idade -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <img src="img/Logo.PNG" alt="Logotipo" class="logo">
+            <h2>Este site é para maiores de 18 anos</h2>
+            <p>Ao clicar no botão abaixo você concorda que é maior de idade</p>
+            <button id="confirmBtn" class="confirm-btn">Acessar o site</button>
+        </div>
+    </div>
     <!-- Inicio -->
     <section id="content">
         <div class="container">
             <h2>Bem-vindo ao DesirePacks</h2>
             <p>Descubra uma variedade de conteúdos exclusivos que vão satisfazer seus desejos.</p>
-            <a id="subscribe-btn">acesso exclusivo!</a>
+            <a id="subscribe-btn" href="#">acesso exclusivo!</a>
         </div>
     </section>
     <!-- Carrossel de Imagens -->
@@ -43,6 +54,7 @@
         <div class="slides">
             <div class="slide">
                 <img src="img/Modelo1.png" alt="Slide 1">
+                <div class="overlay-text">Desbloqueie o conteúdo</div>
             </div>
             <div class="slide">
                 <img src="img/modelo2.png" alt="Slide 2">
@@ -86,8 +98,8 @@
             <div class="card" id="card1">
                 <img src="img/modelo2.png" alt="Profile 1" class="profile-img">
                 <div class="overlay">
-                    <h3 class="name">Nome 1</h3>
-                    <p class="description">Descrição do perfil 1.</p>
+                    <h3 class="name">Amanda</h3>
+                    <p class="description">Loira sensual pronta para realizar suas fantasias.</p>
                     <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
                     <button class="dislike-btn"><i class="fas fa-times"></i></button>
                 </div>
@@ -95,13 +107,66 @@
             <div class="card" id="card2">
                 <img src="img/modelo3.png" alt="Profile 2" class="profile-img">
                 <div class="overlay">
-                    <h3 class="name">Nome 2</h3>
-                    <p class="description">Descrição do perfil 2.</p>
+                    <h3 class="name">Bruna</h3>
+                    <p class="description">Morena ardente pronta para te levar ao paraíso do prazer.</p>
+                    <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
+                    <button class="dislike-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card" id="card3">
+                <img src="img/modelo4.png" alt="Profile 3" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Camila</h3>
+                    <p class="description">Ruiva fogosa pronta para realizar suas fantasias.</p>
+                    <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
+                    <button class="dislike-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card" id="card4">
+                <img src="img/modelo5.png" alt="Profile 4" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Letícia</h3>
+                    <p class="description">Loira de tirar o fôlego pronta para realizar seus desejos.</p>
+                    <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
+                    <button class="dislike-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card" id="card5">
+                <img src="img/modelo6.png" alt="Profile 5" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Fernanda</h3>
+                    <p class="description">Morena irresistível pronta para te levar ao delírio do prazer.</p>
+                    <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
+                    <button class="dislike-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card" id="card6">
+                <img src="img/modelo7.png" alt="Profile 6" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Mariana</h3>
+                    <p class="description">Loira dos sonhos pronta para realizar suas fantasias mais secretas.</p>
                     <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
                     <button class="dislike-btn"><i class="fas fa-times"></i></button>
                 </div>
             </div>
             <!-- Adicione mais cartões conforme necessário -->
+        </div>
+    </section>
+    <!--Contato-->
+    <section id="contact" class="contact">
+        <h2>Entre em Contato</h2>
+        <div class="contact-form">
+            <form>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                <input type="email" id="email" name="email" placeholder="Seu email" required>
+                <div style="position: relative;">
+                    <textarea id="message" name="message" rows="4" placeholder="Mensagem" required maxlength="200"
+                        oninput="countChars(this)"></textarea>
+                    <p class="char-counter" id="charCount">0</p>
+                </div>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
         </div>
     </section>
     <script src="script.js"></script>
