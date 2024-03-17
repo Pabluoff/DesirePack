@@ -585,7 +585,7 @@ textarea::-webkit-scrollbar {
 
 .premium-members {
     background-color: #f9f9f9;
-    padding: 90px 20px;
+    padding: 90px 30px;
     text-align: center;
 }
 
@@ -596,7 +596,7 @@ textarea::-webkit-scrollbar {
 }
 
 .premium-members p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #666;
     line-height: 1.6;
     max-width: 800px;
@@ -610,7 +610,7 @@ textarea::-webkit-scrollbar {
 }
 
 video {
-    width: 100%;
+    width: 60%;
     height: auto;
 }
 
@@ -623,8 +623,13 @@ video {
     border: none;
     cursor: pointer;
     font-size: 3rem;
-    color: white;
+    color: #ffffffcc;
     z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.play-btn:hover {
+    color: #ffffff;
 }
 
 .play-btn i.fa-pause {
