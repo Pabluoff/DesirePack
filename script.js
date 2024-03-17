@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
     playBtn.addEventListener('click', function () {
         if (video.paused) {
             video.play();
-            video.muted = false; // Desmuta o vídeo ao iniciar a reprodução
             playBtn.innerHTML = '<i class="fas fa-pause"></i>';
         } else {
             video.pause();
@@ -31,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     video.addEventListener('click', function () {
         if (video.paused) {
             video.play();
-            video.muted = false; // Desmuta o vídeo ao iniciar a reprodução
             playBtn.innerHTML = '<i class="fas fa-pause"></i>';
         } else {
             video.pause();
