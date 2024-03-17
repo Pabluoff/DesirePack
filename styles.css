@@ -620,7 +620,6 @@ textarea::-webkit-scrollbar {
 video {
     width: 100%;
     height: auto;
-    display: block;
     border-radius: 10px;
 }
 
@@ -633,17 +632,21 @@ video {
     border: none;
     cursor: pointer;
     font-size: 3rem;
-    color: white;
+    color: #53a3ff;
     z-index: 1;
     transition: color 0.3s ease;
-    border-radius: 50%;
-    padding: 20px;
 }
 
 .play-btn:hover {
-    color: #3e8af3;
+    color: #3986de;
 }
 
 .play-btn i.fa-pause {
     display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .videos-wrapper {
+        flex-direction: column;
+    }
 }
