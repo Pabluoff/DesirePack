@@ -14,35 +14,52 @@ document.addEventListener("DOMContentLoaded", function () {
         hamburger.classList.toggle("toggle");
     });
 
-    const video = document.getElementById('premium-video');
-    const playBtn = document.getElementById('play-btn');
+    // Seleciona todos os vídeos dentro da seção premium
+    const videos = document.querySelectorAll('.premium-members video');
+    const playBtns = document.querySelectorAll('.premium-members .play-btn');
 
-    playBtn.addEventListener('click', function () {
-        if (video.paused) {
-            video.play();
-            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-        } else {
+    // Para cada vídeo, configurar o autoplay e os eventos de clique
+    videos.forEach((video, index) => {
+        // Iniciar o autoplay por segundos
+        video.play();
+        video.muted = true; // Mute para evitar som durante o autoplay
+
+        // Pausar o vídeo segundos
+        setTimeout(function () {
             video.pause();
-            playBtn.innerHTML = '<i class="fas fa-play"></i>';
-        }
-    });
+            video.muted = false; // Desmuta o vídeo ao pausar
+        }, 2000); // segundos
 
-    video.addEventListener('click', function () {
-        if (video.paused) {
-            video.play();
-            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-        } else {
-            video.pause();
-            playBtn.innerHTML = '<i class="fas fa-play"></i>';
-        }
-    });
+        // Atualiza o botão de play/pause ao pausar o vídeo
+        video.addEventListener('pause', function () {
+            playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
+        });
 
-    video.addEventListener('ended', function () {
-        playBtn.innerHTML = '<i class="fas fa-play"></i>';
-    });
+        // Atualiza o botão de play/pause ao clicar no vídeo
+        video.addEventListener('click', function () {
+            if (video.paused) {
+                video.play();
+                playBtns[index].innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
 
-    // Desabilitar tela cheia
-    video.removeAttribute("controls");
+        // Atualiza o botão de play/pause ao clicar no botão de play
+        playBtns[index].addEventListener('click', function () {
+            if (video.paused) {
+                video.play();
+                playBtns[index].innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+
+        // Desabilitar tela cheia
+        video.removeAttribute("controls");
+    });
 
     const slidesContainer = document.querySelector('.slides');
     const slides = document.querySelectorAll('.slide');

@@ -603,14 +603,22 @@ textarea::-webkit-scrollbar {
     margin: 0 auto 30px;
 }
 
+.videos-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .video-container {
     position: relative;
-    max-width: 800px;
+    max-width: 70%;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 video {
-    width: 60%;
+    width: 100%;
     height: auto;
 }
 
@@ -637,12 +645,7 @@ video {
 }
 
 @media screen and (max-width: 768px) {
-    .video-container {
-        max-width: 100%;
-    }
-
-    video {
-        width: 70%;
-        height: auto;
+    .videos-wrapper {
+        flex-direction: column;
     }
 }
