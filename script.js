@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
     video.addEventListener('ended', function () {
         playBtn.innerHTML = '<i class="fas fa-play"></i>';
     });
-});
 
+    // Desabilitar tela cheia
+    video.removeAttribute("controls");
 
-document.addEventListener("DOMContentLoaded", function () {
     const slidesContainer = document.querySelector('.slides');
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;

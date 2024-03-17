@@ -635,3 +635,14 @@ video {
 .play-btn i.fa-pause {
     display: none;
 }
+
+@media screen and (max-width: 768px) {
+    .video-container {
+        max-width: 100%;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
