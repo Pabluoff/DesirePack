@@ -166,3 +166,25 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("mainContent").style.display = "block";
     });
 });
+
+
+
+const video = document.getElementById('premium-video');
+const playBtn = document.getElementById('play-btn');
+
+playBtn.addEventListener('click', function () {
+    if (video.paused) {
+        video.play();
+        playBtn.querySelector('i.fa-play').style.display = 'none';
+        playBtn.querySelector('i.fa-pause').style.display = 'inline';
+    } else {
+        video.pause();
+        playBtn.querySelector('i.fa-play').style.display = 'inline';
+        playBtn.querySelector('i.fa-pause').style.display = 'none';
+    }
+});
+
+video.addEventListener('ended', function () {
+    playBtn.querySelector('i.fa-play').style.display = 'inline';
+    playBtn.querySelector('i.fa-pause').style.display = 'none';
+});
