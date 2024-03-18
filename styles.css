@@ -608,6 +608,7 @@ textarea::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    background-color: transparent;
 }
 
 .video-container {
@@ -632,13 +633,13 @@ video {
     border: none;
     cursor: pointer;
     font-size: 3rem;
-    color: #ffffff;
+    color: #53a4ff;
     z-index: 1;
     transition: color 0.3s ease;
 }
 
 .play-btn:hover {
-    color: #53a4ff;
+    color: #3986de;
     background-color: transparent;
 }
 
