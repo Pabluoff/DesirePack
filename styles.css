@@ -597,7 +597,7 @@ textarea::-webkit-scrollbar {
 
 .premium-members p {
     font-size: 0.9rem;
-    color: #666;
+    color: #474747;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto 30px;
@@ -639,6 +639,7 @@ video {
 
 .play-btn:hover {
     color: #3986de;
+    background-color: transparent;
 }
 
 .play-btn i.fa-pause {
@@ -649,4 +650,26 @@ video {
     .videos-wrapper {
         flex-direction: column;
     }
+}
+
+
+.pack-link {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background-color: #53a4ff;
+    padding: 10px 30px;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+
+.pack-link:hover {
+    background-color: #3986de;
 }
