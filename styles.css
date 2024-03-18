@@ -596,7 +596,7 @@ textarea::-webkit-scrollbar {
 }
 
 .premium-members p {
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     color: #474747;
     line-height: 1.6;
     max-width: 800px;
