@@ -612,7 +612,7 @@ textarea::-webkit-scrollbar {
 
 .video-container {
     position: relative;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
     margin-bottom: 20px;
 }
@@ -632,13 +632,13 @@ video {
     border: none;
     cursor: pointer;
     font-size: 3rem;
-    color: #53a3ff;
+    color: #ffffff;
     z-index: 1;
     transition: color 0.3s ease;
 }
 
 .play-btn:hover {
-    color: #3986de;
+    color: #53a4ff;
     background-color: transparent;
 }
 
