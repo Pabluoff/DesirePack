@@ -18,24 +18,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const videos = document.querySelectorAll('.premium-members video');
     const playBtns = document.querySelectorAll('.premium-members .play-btn');
 
-    // Para cada vídeo, configurar o autoplay e os eventos de clique
     videos.forEach((video, index) => {
         // Iniciar o autoplay por segundos
         video.play();
-        video.muted = true; // Mute para evitar som durante o autoplay
+        video.muted = true; 
 
-        // Pausar o vídeo segundos
         setTimeout(function () {
             video.pause();
-            video.muted = false; // Desmuta o vídeo ao pausar
+            video.muted = false;
         }, 2000); // segundos
 
-        // Atualiza o botão de play/pause ao pausar o vídeo
         video.addEventListener('pause', function () {
             playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
         });
 
-        // Atualiza o botão de play/pause ao clicar no vídeo
         video.addEventListener('click', function () {
             if (video.paused) {
                 video.play();
