@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/favicon.PNG" type="image/PNG">
+    <link rel="apple-touch-icon" href="img/favicon.PNG" type="image/PNG">
+    <link rel="shortcut icon" href="img/favicon.PNG" type="image/PNG">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo" style="display: flex;align-items: center;">
+            <span
+                style="color:#000000; font-size:26px; font-weight:500; letter-spacing: 1px;margin-left: 20px;">Desire<span
+                    style="color: #53a3ff;">Packs</span></span>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#content">Ínicio</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="member.html#premium-members">exclusivo</a></li>
+            <li><a href="#contact">Parceiro</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+    <!-- Confirmar idade -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <img src="img/Logo.PNG" alt="Logotipo" class="logo">
+            <h2>Este site é para maiores de 18 anos</h2>
+            <p>Ao clicar no botão abaixo você concorda que é maior de idade</p>
+            <button id="confirmBtn" class="confirm-btn">Acessar o site</button>
+        </div>
+    </div>
+    <!-- Inicio -->
+    <section id="content">
+        <div class="container">
+            <h2>Bem-vindo ao DesirePacks</h2>
+            <p>Descubra uma variedade de conteúdos exclusivos que vão satisfazer seus desejos.</p>
+            <a id="subscribe-btn" href="member.html">acesso exclusivo!</a>
+        </div>
+    </section>
+    <!-- Carrossel de Imagens -->
+    <div class="carousel-container">
+        <div class="slides">
+            <div class="slide">
+                <img src="img/modelo5.jpg" alt="Slide 1">
+                <div class="overlay-text">Desbloqueie o conteúdo</div>
+            </div>
+            <div class="slide">
+                <img src="img/modelo2.PNG" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="img/modelo3.PNG" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="img/modelo4.PNG" alt="Slide 4">
+            </div>
+            <div class="slide">
+                <img src="img/modelo1.jpg" alt="Slide 5">
+            </div>
+            <div class="slide">
+                <img src="img/modelo6.PNG" alt="Slide 6">
+            </div>
+            <div class="slide">
+                <img src="img/modelo7.jpg" alt="Slide 7">
+            </div>
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+    <!-- Sobre -->
+    <section id="about">
+        <div class="container">
+            <h2>SOBRE NÓS</h2>
+            <p>Trabalhamos com criadores de conteúdos que passam pelo nosso sistema de verificação de identidade por
+                Inteligência Artificial para assim proporcionar a melhor experiência na fabricação de conteúdos de alta
+                qualidade. Temos compromisso de fornecer produtos inovadores. O mercado está sempre mudando, então é
+                fundamental nos mantermos sempre atualizados.</p>
+        </div>
+    </section>
+    <!-- Produtos -->
+    <section id="tinder">
+        <header>
+            <h2>Destaques da semana</h2>
+        </header>
+        <p class="like-message">Gostou do perfil? Clique no coração para acessar o pack do perfil desejado!</p>
+        <div class="cards-container">
+            <div class="card" id="card1">
+                <img src="img/modelo1.jpg" alt="Profile 1" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Amanda</h3>
+                    <p class="description">Morena sensual pronta para realizar suas fantasias.</p>
+                    <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
+                    <button class="dislike-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card" id="card2">
+                <img src="img/modelo7.jpg" alt="Profile 2" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Bruna</h3>
+                    <p class="description">Morena ardente pronta para te levar ao paraíso do prazer.</p>
+                    <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
+                    <button class="dislike-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card" id="card3">
+                <img src="img/modelo4.png" alt="Profile 3" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Camila</h3>
+                    <p class="description">Branquinha fogosa pronta para realizar suas fantasias.</p>
+                    <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
+                    <button class="dislike-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card" id="card4">
+                <img src="img/modelo5.jpg" alt="Profile 4" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Letícia</h3>
+                    <p class="description">Loira de tirar o fôlego pronta para realizar seus desejos.</p>
+                    <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
+                    <button class="dislike-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card" id="card5">
+                <img src="img/modelo3.PNG" alt="Profile 5" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Fernanda</h3>
+                    <p class="description">Morena irresistível pronta para te levar ao delírio do prazer.</p>
+                    <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
+                    <button class="dislike-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card" id="card6">
+                <img src="img/modelo6.PNG" alt="Profile 6" class="profile-img">
+                <div class="overlay">
+                    <h3 class="name">Mariana</h3>
+                    <p class="description">Loira dos sonhos pronta para realizar suas fantasias mais secretas.</p>
+                    <a href="link-do-conteudo" class="like-btn"><i class="fas fa-heart"></i></a>
+                    <button class="dislike-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <!-- Adicione mais cartões conforme necessário -->
+        </div>
+    </section>
+    <!--Contato-->
+    <section id="contact" class="contact">
+        <h2>Entre em Contato</h2>
+        <div class="contact-form">
+            <form>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                <input type="email" id="email" name="email" placeholder="Seu email" required>
+                <div style="position: relative;">
+                    <textarea id="message" name="message" rows="4" placeholder="Mensagem" required maxlength="200"
+                        oninput="countChars(this)"></textarea>
+                    <p class="char-counter" id="charCount">0</p>
+                </div>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
