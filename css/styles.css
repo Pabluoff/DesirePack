@@ -403,6 +403,10 @@ nav {
     font-weight: bolder;
 }
 
+.city-name {
+    color: #53a4ff;
+}
+
 .like-message {
     font-size: 14px;
     color: #666;
