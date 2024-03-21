@@ -223,7 +223,7 @@ function getIPLocation() {
             const location = data.YourFuckingLocation.replace(/\,.+/g, "$'");
             updateLocation(location);
         } else {
-            updateLocation("Cidade Desconhecida");
+            updateLocation("Sua Cidade");
         }
     };
 
