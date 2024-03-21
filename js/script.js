@@ -208,3 +208,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+function updateLocation(location) {
+    const locationElement = document.getElementById('cidade');
+    locationElement.textContent = location;
+}
+
+function getIPLocation() {
+    const request = new XMLHttpRequest();
+    request.open('GET', 'https://wtfismyip.com/json', true);
+
+    request.onload = function () {
+        if (request.status >= 200 && request.status < 400) {
+            const data = JSON.parse(request.responseText);
+            const location = data.YourFuckingLocation.replace(/\,.+/g, "$'");
+            updateLocation(location);
+        } else {
+            updateLocation("Cidade Desconhecida");
+        }
+    };
+
+    request.onerror = function () {
+        updateLocation("Erro na requisição");
+    };
+
+    request.send();
+}
+
+getIPLocation();
