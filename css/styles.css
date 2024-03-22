@@ -647,6 +647,7 @@ video {
 
 .play-btn i.fa-pause {
     display: none;
+    background-color: transparent;
 }
 
 @media screen and (max-width: 768px) {
