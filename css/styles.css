@@ -651,6 +651,13 @@ video {
 }
 
 @media screen and (max-width: 768px) {
+    .play-btn {
+        background: none !important;
+        /* Mantenha o fundo transparente no mobile */
+    }
+}
+
+@media screen and (max-width: 768px) {
     .videos-wrapper {
         flex-direction: column;
     }
