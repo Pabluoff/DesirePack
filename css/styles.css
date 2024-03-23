@@ -656,7 +656,7 @@ video {
 
 @media screen and (max-width: 768px) {
     .play-btn {
-        background: none !important;
+        background: none;
     }
 }
 
