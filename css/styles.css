@@ -659,6 +659,10 @@ video {
     }
 }
 
+.iphone-fix {
+    background-color: transparent !important;
+}
+
 @media screen and (max-width: 768px) {
     .videos-wrapper {
         flex-direction: column;

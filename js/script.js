@@ -235,3 +235,13 @@ function getIPLocation() {
 }
 
 getIPLocation();
+
+window.onload = function () {
+    // Verifica se o dispositivo é um iPhone
+    const isiPhone = /iPhone/.test(navigator.userAgent);
+
+    // Se for um iPhone, adicione uma classe ao botão
+    if (isiPhone) {
+        document.querySelector('.play-btn').classList.add('iphone-fix');
+    }
+};
