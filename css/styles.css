@@ -634,7 +634,7 @@ video {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: transparent;
+    background: none;
     border: none;
     cursor: pointer;
     font-size: 3.5rem;
@@ -651,7 +651,6 @@ video {
 
 .play-btn i.fa-pause {
     display: none;
-    background-color: transparent;
 }
 
 @media screen and (max-width: 768px) {
@@ -716,4 +715,3 @@ video {
 .see-more-btn i {
     margin-left: 5px;
 }
-
