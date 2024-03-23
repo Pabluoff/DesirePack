@@ -634,7 +634,7 @@ video {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: transparent !important;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     font-size: 3.5rem;

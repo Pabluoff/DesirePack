@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     videos.forEach((video, index) => {
         // Iniciar o autoplay por segundos
         video.play();
-        video.muted = true;
+        video.muted = true; 
 
         setTimeout(function () {
             video.pause();
@@ -32,30 +32,31 @@ document.addEventListener("DOMContentLoaded", function () {
             playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
         });
 
-        // Atualiza o botão de play/pause ao clicar no vídeo
         video.addEventListener('click', function () {
-            togglePlay(video, playBtns[index]);
+            if (video.paused) {
+                video.play();
+                playBtns[index].innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
+            }
         });
 
         // Atualiza o botão de play/pause ao clicar no botão de play
         playBtns[index].addEventListener('click', function () {
-            togglePlay(video, playBtns[index]);
+            if (video.paused) {
+                video.play();
+                playBtns[index].innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
+            }
         });
 
         // Desabilitar tela cheia
         video.removeAttribute("controls");
     });
-
-    // Função para alternar entre play e pause
-    function togglePlay(video, playBtn) {
-        if (video.paused) {
-            video.play();
-            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-        } else {
-            video.pause();
-            playBtn.innerHTML = '<i class="fas fa-play"></i>';
-        }
-    }
+    
 
     const slidesContainer = document.querySelector('.slides');
     const slides = document.querySelectorAll('.slide');
