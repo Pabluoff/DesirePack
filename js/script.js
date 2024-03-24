@@ -248,21 +248,22 @@ function openAdsModalAfterDelay() {
 
 window.onload = function () {
     var adsModal = document.getElementById('ads-modal-container');
-    adsModal.style.display = 'none'; 
+    adsModal.style.display = 'none';
     openAdsModalAfterDelay();
 };
 
 function closeAdsModal() {
     var adsModal = document.getElementById('ads-modal-container');
     var adsVideo = document.getElementById('ads-video');
-    adsVideo.pause(); // Pausa o vídeo
     adsModal.style.display = 'none';
+    adsVideo.pause();
 }
 
 function unmuteVideoAfterDelay() {
     var adsVideo = document.getElementById('ads-video');
     setTimeout(function () {
         adsVideo.muted = false;
+        adsVideo.play();
     }, 0.0001); 
 }
 
