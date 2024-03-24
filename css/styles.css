@@ -630,10 +630,6 @@ video {
 }
 
 
-video::-webkit-media-controls-start-playback-button {
-    display: none !important;
-}
-
 .play-btn {
     position: absolute;
     top: 45%;
