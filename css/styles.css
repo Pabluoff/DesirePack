@@ -797,11 +797,12 @@ video {
 }
 
 .ads-modal-button:hover {
-    background-color: #252525;
-    border: 2px solid #332c2c;
+    background-color: #00600084;
+    border: 2px solid #06dd0696;
 }
 
-.ads-modal-content img, video {
+.ads-modal-content img,
+video {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
