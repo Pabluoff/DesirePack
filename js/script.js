@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Seleciona todos os vídeos dentro da seção premium
-    // Seleciona todos os vídeos dentro da seção premium
-    const videos = document.querySelectorAll('.videos-wrapper video');
-    const playBtns = document.querySelectorAll('.videos-wrapper .play-btn');
+    const videos = document.querySelectorAll('.premium-members video');
+    const playBtns = document.querySelectorAll('.premium-members .play-btn');
 
     videos.forEach((video, index) => {
         // Iniciar o autoplay por segundos
-        video.muted = true;
+        video.play();
+        video.muted = true; 
 
         setTimeout(function () {
             video.pause();
@@ -29,18 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 2000); // segundos
 
         video.addEventListener('pause', function () {
-            playBtns[index].style.display = 'block';
-        });
-
-        video.addEventListener('play', function () {
-            playBtns[index].style.display = 'none';
+            playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
         });
 
         video.addEventListener('click', function () {
             if (video.paused) {
                 video.play();
+                playBtns[index].innerHTML = '<i class="fas fa-pause"></i>';
             } else {
                 video.pause();
+                playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
             }
         });
 
@@ -48,15 +46,17 @@ document.addEventListener("DOMContentLoaded", function () {
         playBtns[index].addEventListener('click', function () {
             if (video.paused) {
                 video.play();
+                playBtns[index].innerHTML = '<i class="fas fa-pause"></i>';
             } else {
                 video.pause();
+                playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
             }
         });
 
         // Desabilitar tela cheia
         video.removeAttribute("controls");
     });
-
+    
 
     const slidesContainer = document.querySelector('.slides');
     const slides = document.querySelectorAll('.slide');
@@ -237,45 +237,33 @@ function getIPLocation() {
 
 getIPLocation();
 
-// Função para exibir o anúncio após um atraso aleatório
+// Função para exibir o ads
 function openAdsModalAfterDelay() {
-    var delay = Math.floor(Math.random() * (30000 - 10000 + 1)) + 10000; // Entre 10 e 30 segundos
     setTimeout(function () {
         var adsModal = document.getElementById('ads-modal-container');
         adsModal.style.display = 'flex';
-    }, delay); // Exibir o modal após o atraso aleatório
+        unmuteVideoAfterDelay();
+    }, 10000);
 }
 
-// Função para fechar o modal e pausar o vídeo
-function closeAdsModal() {
-    var adsModal = document.getElementById('ads-modal-container');
-    var video = document.querySelector('#ads-modal-container video');
-    adsModal.style.display = 'none';
-    video.pause(); // Pausar o vídeo ao fechar o modal
-}
-
-// Chamar a função para exibir o modal após o carregamento da página
 window.onload = function () {
     var adsModal = document.getElementById('ads-modal-container');
-    adsModal.style.display = 'none'; // Oculta o modal inicialmente
+    adsModal.style.display = 'none'; 
     openAdsModalAfterDelay();
 };
 
-// Adicionar um evento de clique ao botão de fechar o modal
-document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
-
-// Função para desmutar o vídeo após um atraso
-function unmuteVideoAfterDelay(video) {
-    setTimeout(function () {
-        video.muted = false; // Desmutar o vídeo após 1 milissegundo
-    }, 1); // 1 milissegundo
+function closeAdsModal() {
+    var adsModal = document.getElementById('ads-modal-container');
+    var adsVideo = document.getElementById('ads-video');
+    adsVideo.pause(); // Pausa o vídeo
+    adsModal.style.display = 'none';
 }
 
-// Selecionar o elemento de vídeo
-var video = document.querySelector('#ads-modal-container video');
+function unmuteVideoAfterDelay() {
+    var adsVideo = document.getElementById('ads-video');
+    setTimeout(function () {
+        adsVideo.muted = false;
+    }, 0.0001); 
+}
 
-// Adicionar um ouvinte de evento para o evento play do vídeo
-video.addEventListener('play', function () {
-    // Chamar a função para desmutar o vídeo após o vídeo começar a ser reproduzido
-    unmuteVideoAfterDelay(video);
-});
+document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
