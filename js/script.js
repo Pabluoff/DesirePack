@@ -243,6 +243,8 @@ function openAdsModalAfterDelay() {
     setTimeout(function () {
         var adsModal = document.getElementById('ads-modal-container');
         adsModal.style.display = 'flex';
+        var video = document.querySelector('#ads-modal-container video');
+        video.play(); // Iniciar o vídeo manualmente
     }, delay); // Exibir o modal após o atraso aleatório
 }
 
