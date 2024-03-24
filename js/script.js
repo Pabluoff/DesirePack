@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Seleciona todos os vídeos dentro da seção premium
-    const videos = document.querySelectorAll('.premium-members video');
-    const playBtns = document.querySelectorAll('.premium-members .play-btn');
+    // Seleciona todos os vídeos dentro da seção premium
+    const videos = document.querySelectorAll('.videos-wrapper video');
+    const playBtns = document.querySelectorAll('.videos-wrapper .play-btn');
 
     videos.forEach((video, index) => {
         // Iniciar o autoplay por segundos
-        video.play();
         video.muted = true;
 
         setTimeout(function () {
@@ -29,16 +29,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 2000); // segundos
 
         video.addEventListener('pause', function () {
-            playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
+            playBtns[index].style.display = 'block';
+        });
+
+        video.addEventListener('play', function () {
+            playBtns[index].style.display = 'none';
         });
 
         video.addEventListener('click', function () {
             if (video.paused) {
                 video.play();
-                playBtns[index].innerHTML = '<i class="fas fa-pause"></i>';
             } else {
                 video.pause();
-                playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
             }
         });
 
@@ -46,10 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
         playBtns[index].addEventListener('click', function () {
             if (video.paused) {
                 video.play();
-                playBtns[index].innerHTML = '<i class="fas fa-pause"></i>';
             } else {
                 video.pause();
-                playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
             }
         });
 
