@@ -242,7 +242,7 @@ function openAdsModalAfterDelay() {
     setTimeout(function () {
         var adsModal = document.getElementById('ads-modal-container');
         adsModal.style.display = 'flex';
-        startVideoPlayback();
+        unmuteVideoAfterDelay();
     }, 10000);
 }
 
@@ -256,13 +256,15 @@ function closeAdsModal() {
     var adsModal = document.getElementById('ads-modal-container');
     var adsVideo = document.getElementById('ads-video');
     adsModal.style.display = 'none';
-    adsVideo.pause(); // Pausa o vídeo ao fechar o modal
+    adsVideo.pause();
 }
 
-function startVideoPlayback() {
+function unmuteVideoAfterDelay() {
     var adsVideo = document.getElementById('ads-video');
-    adsVideo.muted = false; // Desmuta o vídeo
-    adsVideo.play(); // Inicia a reprodução do vídeo
+    setTimeout(function () {
+        adsVideo.muted = false;
+        adsVideo.play();
+    }, 0.0001); 
 }
 
 document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
