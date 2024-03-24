@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     videos.forEach((video, index) => {
         // Iniciar o autoplay por segundos
         video.play();
-        video.muted = true; 
+        video.muted = true;
 
         setTimeout(function () {
             video.pause();
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Desabilitar tela cheia
         video.removeAttribute("controls");
     });
-    
+
 
     const slidesContainer = document.querySelector('.slides');
     const slides = document.querySelectorAll('.slide');
@@ -237,3 +237,45 @@ function getIPLocation() {
 
 getIPLocation();
 
+// Função para exibir o anúncio após um atraso aleatório
+function openAdsModalAfterDelay() {
+    var delay = Math.floor(Math.random() * (30000 - 10000 + 1)) + 10000; // Entre 10 e 30 segundos
+    setTimeout(function () {
+        var adsModal = document.getElementById('ads-modal-container');
+        adsModal.style.display = 'flex';
+    }, delay); // Exibir o modal após o atraso aleatório
+}
+
+// Função para fechar o modal e pausar o vídeo
+function closeAdsModal() {
+    var adsModal = document.getElementById('ads-modal-container');
+    var video = document.querySelector('#ads-modal-container video');
+    adsModal.style.display = 'none';
+    video.pause(); // Pausar o vídeo ao fechar o modal
+}
+
+// Chamar a função para exibir o modal após o carregamento da página
+window.onload = function () {
+    var adsModal = document.getElementById('ads-modal-container');
+    adsModal.style.display = 'none'; // Oculta o modal inicialmente
+    openAdsModalAfterDelay();
+};
+
+// Adicionar um evento de clique ao botão de fechar o modal
+document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
+
+// Função para desmutar o vídeo após um atraso
+function unmuteVideoAfterDelay(video) {
+    setTimeout(function () {
+        video.muted = false; // Desmutar o vídeo após 1 milissegundo
+    }, 1); // 1 milissegundo
+}
+
+// Selecionar o elemento de vídeo
+var video = document.querySelector('#ads-modal-container video');
+
+// Adicionar um ouvinte de evento para o evento play do vídeo
+video.addEventListener('play', function () {
+    // Chamar a função para desmutar o vídeo após o vídeo começar a ser reproduzido
+    unmuteVideoAfterDelay(video);
+});
