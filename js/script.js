@@ -19,14 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const playBtns = document.querySelectorAll('.premium-members .play-btn');
 
     videos.forEach((video, index) => {
-        // Iniciar o autoplay por segundos
-        video.play();
-        video.muted = true; 
-
-        setTimeout(function () {
-            video.pause();
-            video.muted = false;
-        }, 2000); // segundos
+        video.muted = true; // Mute inicial
 
         video.addEventListener('pause', function () {
             playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
