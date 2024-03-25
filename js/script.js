@@ -263,11 +263,11 @@ window.onload = function () {
     var adsModal = document.getElementById('ads-modal-container');
     adsModal.style.display = 'none';
     openAdsModalAfterDelay();
+
+    var video = document.querySelector('#ads-modal-container video');
+    video.addEventListener('play', function () {
+        unmuteVideoAfterDelay(video);
+    });
+
+    document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
 };
-
-document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
-
-var video = document.querySelector('#ads-modal-container video');
-video.addEventListener('play', function () {
-    unmuteVideoAfterDelay(video);
-});
