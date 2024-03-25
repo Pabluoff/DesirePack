@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Desabilitar tela cheia
         video.removeAttribute("controls");
     });
-    
+
 
     const slidesContainer = document.querySelector('.slides');
     const slides = document.querySelectorAll('.slide');
@@ -237,39 +237,37 @@ function getIPLocation() {
 
 getIPLocation();
 
-// Função para exibir o anúncio a
+// Função para exibir o anúncio
 function openAdsModalAfterDelay() {
-    var delay = Math.floor(Math.random() * (30000 - 10000 + 1)) + 10000; 
+    var delay = Math.floor(Math.random() * (30000 - 10000 + 1)) + 10000;
     setTimeout(function () {
         var adsModal = document.getElementById('ads-modal-container');
         adsModal.style.display = 'flex';
-    }, delay); 
+    }, delay);
 }
 
 function closeAdsModal() {
     var adsModal = document.getElementById('ads-modal-container');
     var video = document.querySelector('#ads-modal-container video');
     adsModal.style.display = 'none';
-    video.pause(); 
+    video.pause();
+}
+
+function unmuteVideoAfterDelay(video) {
+    setTimeout(function () {
+        video.muted = false; // Desmuta o vídeo após 1 segundo
+    }, 0.0001);
 }
 
 window.onload = function () {
     var adsModal = document.getElementById('ads-modal-container');
-    adsModal.style.display = 'none'; 
+    adsModal.style.display = 'none';
     openAdsModalAfterDelay();
 };
 
 document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
 
-function unmuteVideoAfterDelay(video) {
-    setTimeout(function () {
-        video.muted = false; 
-    }, 1);
-}
-
-// Selecionar o elemento de vídeo
 var video = document.querySelector('#ads-modal-container video');
-
 video.addEventListener('play', function () {
     unmuteVideoAfterDelay(video);
 });
