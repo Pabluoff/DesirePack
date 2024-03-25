@@ -256,7 +256,7 @@ function closeAdsModal() {
 function unmuteVideoAfterDelay(video) {
     setTimeout(function () {
         video.muted = false; // Desmuta o vídeo após 1 segundo
-    }, 0.0001);
+    }, 1000);
 }
 
 window.onload = function () {
