@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     videos.forEach((video, index) => {
         // Iniciar o autoplay por segundos
         video.play();
-        video.muted = true; 
+        video.muted = true;
 
         setTimeout(function () {
             video.pause();
