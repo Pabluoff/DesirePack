@@ -237,33 +237,39 @@ function getIPLocation() {
 
 getIPLocation();
 
-// Função para exibir o ads
-    function openAdsModalAfterDelay() {
-        setTimeout(function () {
-            var adsModal = document.getElementById('ads-modal-container');
-            adsModal.style.display = 'flex';
-            unmuteVideoAfterDelay();
-        }, 10000);
-    }
-
-    window.onload = function () {
+// Função para exibir o anúncio a
+function openAdsModalAfterDelay() {
+    var delay = Math.floor(Math.random() * (30000 - 10000 + 1)) + 10000; 
+    setTimeout(function () {
         var adsModal = document.getElementById('ads-modal-container');
-        adsModal.style.display = 'none'; // Oculta o modal inicialmente
-        openAdsModalAfterDelay();
-    };
+        adsModal.style.display = 'flex';
+    }, delay); 
+}
 
-    // Função para fechar o modal ao clicar no botão de fechar
-    function closeAdsModal() {
-        var adsModal = document.getElementById('ads-modal-container');
-        adsModal.style.display = 'none';
-    }
+function closeAdsModal() {
+    var adsModal = document.getElementById('ads-modal-container');
+    var video = document.querySelector('#ads-modal-container video');
+    adsModal.style.display = 'none';
+    video.pause(); 
+}
 
-    // Função para desmutar o vídeo após 2 segundos
-    function unmuteVideoAfterDelay() {
-        var adsVideo = document.getElementById('ads-video');
-        setTimeout(function () {
-            adsVideo.muted = false;
-        }, 2000); // 2 segundos
-    }
+window.onload = function () {
+    var adsModal = document.getElementById('ads-modal-container');
+    adsModal.style.display = 'none'; 
+    openAdsModalAfterDelay();
+};
 
-    document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
+document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
+
+function unmuteVideoAfterDelay(video) {
+    setTimeout(function () {
+        video.muted = false; 
+    }, 1);
+}
+
+// Selecionar o elemento de vídeo
+var video = document.querySelector('#ads-modal-container video');
+
+video.addEventListener('play', function () {
+    unmuteVideoAfterDelay(video);
+});
