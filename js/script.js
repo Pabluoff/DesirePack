@@ -238,27 +238,26 @@ function getIPLocation() {
 getIPLocation();
 
 
-// Função para exibir o modal de anúncios após um atraso
+// Função para exibir o ads
 function openAdsModalAfterDelay() {
     setTimeout(function () {
         var adsModal = document.getElementById('ads-modal-container');
-        adsModal.style.display = 'flex'; // Exibir o modal após 10 segundos
-        unmuteVideoAfterDelay();
-    }, 10000); // 10 segundos
+        adsModal.style.display = 'flex';
+    }, 10000); // Exibir o modal após 10 segundos
 }
 
-// Função para fechar o modal de anúncios e pausar o vídeo
+// Função para fechar o modal e pausar o vídeo
 function closeAdsModal() {
     var adsModal = document.getElementById('ads-modal-container');
     var video = document.querySelector('#ads-modal-container video');
-    adsModal.style.display = 'none'; // Ocultar o modal ao clicar no botão de fechar
+    adsModal.style.display = 'none';
     video.pause(); // Pausar o vídeo ao fechar o modal
 }
 
 // Chamar a função para exibir o modal após o carregamento da página
 window.onload = function () {
     var adsModal = document.getElementById('ads-modal-container');
-    adsModal.style.display = 'none'; // Ocultar o modal inicialmente
+    adsModal.style.display = 'none'; // Oculta o modal inicialmente
     openAdsModalAfterDelay();
 };
 
@@ -266,16 +265,18 @@ window.onload = function () {
 document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
 
 // Função para desmutar o vídeo após um atraso
-function unmuteVideoAfterDelay() {
-    var adsVideo = document.getElementById('ads-video');
-    setTimeout(function () {
-        adsVideo.muted = false; // Desmutar o vídeo após 1 milissegundo
+function unmuteVideoAfterDelay(video) {
+    var unmuteTimeout = setTimeout(function () {
+        video.muted = false; // Desmutar o vídeo após 1 milissegundo
+        clearTimeout(unmuteTimeout); // Limpar o timeout para evitar execução repetida
     }, 1); // 1 milissegundo
 }
 
+// Selecionar o elemento de vídeo
+var video = document.querySelector('#ads-modal-container video');
+
 // Adicionar um ouvinte de evento para o evento timeupdate do vídeo
-document.getElementById('ads-video').addEventListener('timeupdate', function () {
-    var video = this;
+video.addEventListener('timeupdate', function () {
     // Verificar se o tempo atual do vídeo é maior ou igual a 0.001 segundos
     if (video.currentTime >= 0.001) {
         // Desmutar o vídeo
