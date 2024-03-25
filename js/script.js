@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     videos.forEach((video, index) => {
         // Iniciar o autoplay por segundos
         video.play();
-        video.muted = true;
+        video.muted = true; 
 
         setTimeout(function () {
             video.pause();
@@ -238,33 +238,32 @@ function getIPLocation() {
 getIPLocation();
 
 // Função para exibir o ads
-function openAdsModalAfterDelay() {
-    setTimeout(function () {
+    function openAdsModalAfterDelay() {
+        setTimeout(function () {
+            var adsModal = document.getElementById('ads-modal-container');
+            adsModal.style.display = 'flex';
+            unmuteVideoAfterDelay();
+        }, 10000);
+    }
+
+    window.onload = function () {
         var adsModal = document.getElementById('ads-modal-container');
-        adsModal.style.display = 'flex';
-        unmuteVideoAfterDelay();
-    }, 10000);
-}
+        adsModal.style.display = 'none'; // Oculta o modal inicialmente
+        openAdsModalAfterDelay();
+    };
 
-window.onload = function () {
-    var adsModal = document.getElementById('ads-modal-container');
-    adsModal.style.display = 'none';
-    openAdsModalAfterDelay();
-};
+    // Função para fechar o modal ao clicar no botão de fechar
+    function closeAdsModal() {
+        var adsModal = document.getElementById('ads-modal-container');
+        adsModal.style.display = 'none';
+    }
 
-function closeAdsModal() {
-    var adsModal = document.getElementById('ads-modal-container');
-    var adsVideo = document.getElementById('ads-video');
-    adsModal.style.display = 'none';
-    adsVideo.pause();
-}
+    // Função para desmutar o vídeo após 2 segundos
+    function unmuteVideoAfterDelay() {
+        var adsVideo = document.getElementById('ads-video');
+        setTimeout(function () {
+            adsVideo.muted = false;
+        }, 2000); // 2 segundos
+    }
 
-function unmuteVideoAfterDelay() {
-    var adsVideo = document.getElementById('ads-video');
-    setTimeout(function () {
-        adsVideo.muted = false;
-        adsVideo.play();
-    }, 0.0001); 
-}
-
-document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
+    document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
