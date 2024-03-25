@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Desabilitar tela cheia
         video.removeAttribute("controls");
     });
-    
+
 
     const slidesContainer = document.querySelector('.slides');
     const slides = document.querySelectorAll('.slide');
@@ -256,7 +256,7 @@ function closeAdsModal() {
     var adsModal = document.getElementById('ads-modal-container');
     var adsVideo = document.getElementById('ads-video');
     adsModal.style.display = 'none';
-    adsVideo.pause();
+    adsVideo.pause(); // Pausa o vídeo ao fechar o modal
 }
 
 function unmuteVideoAfterDelay() {
@@ -264,7 +264,7 @@ function unmuteVideoAfterDelay() {
     setTimeout(function () {
         adsVideo.muted = false;
         adsVideo.play();
-    }, 0.0001); 
+    }, 1);
 }
 
 document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
