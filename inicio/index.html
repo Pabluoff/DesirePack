@@ -41,7 +41,7 @@
             <button id="confirmBtn" class="confirm-btn">Acessar o site</button>
         </div>
     </div>
-    <!--Ads-->
+    <!--Ínicio Ads-->
     <div id="ads-modal-container" class="ads-modal-container">
         <div class="ads-modal-content">
             <span id="ads-modal-close" class="ads-modal-close">&times;</span>
@@ -52,6 +52,47 @@
             <a href="https://go.aff.7k-partners.com/okbfs7xn" target="_blank" class="ads-modal-button">SAIBA MAIS</a>
         </div>
     </div>
+    <script>
+        function openAdsModalAfterDelay() {
+            setTimeout(function () {
+                var adsModal = document.getElementById('ads-modal-container');
+                adsModal.style.display = 'flex';
+            }, 10000);
+        }
+
+        function closeAdsModal() {
+            var adsModal = document.getElementById('ads-modal-container');
+            var video = document.querySelector('#ads-modal-container video');
+            adsModal.style.display = 'none';
+            video.pause();
+        }
+
+        window.onload = function () {
+            var adsModal = document.getElementById('ads-modal-container');
+            adsModal.style.display = 'none';
+            openAdsModalAfterDelay();
+        };
+
+        document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
+
+        function unmuteVideoAfterDelay(video) {
+            var unmuteTimeout = setTimeout(function () {
+                video.muted = false;
+                clearTimeout(unmuteTimeout);
+            }, 1);
+        }
+
+        var video = document.querySelector('#ads-modal-container video');
+
+        video.addEventListener('timeupdate', function () {
+            if (video.currentTime >= 0.001) {
+                video.muted = false;
+                video.removeEventListener('timeupdate', arguments.callee);
+            }
+        });
+
+    </script>
+    <!--Fim Ads-->
     <!-- Inicio -->
     <section id="content">
         <div class="container">
