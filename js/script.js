@@ -238,30 +238,32 @@ getIPLocation();
 function openAdsModalAfterDelay() {
     setTimeout(function () {
         var adsModal = document.getElementById('ads-modal-container');
+        var video = document.getElementById('ads-video');
         adsModal.style.display = 'flex';
+        video.play(); 
     }, 10000);
 }
 
 function closeAdsModal() {
     var adsModal = document.getElementById('ads-modal-container');
-    var video = document.querySelector('#ads-modal-container video');
+    var video = document.getElementById('ads-video');
     adsModal.style.display = 'none';
-    video.pause(); 
+    video.pause();
 }
 
 window.onload = function () {
     var adsModal = document.getElementById('ads-modal-container');
-    adsModal.style.display = 'none'; 
-    openAdsModalAfterDelay();
+    adsModal.style.display = 'none';
+    openAdsModalAfterDelay(); 
 };
 
 document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
 
 function unmuteVideoAfterDelay(video) {
     var unmuteTimeout = setTimeout(function () {
-        video.muted = false; 
+        video.muted = false;
         clearTimeout(unmuteTimeout);
-    }, 1); 
+    }, 1);
 }
 
 var video = document.querySelector('#ads-modal-container video');
