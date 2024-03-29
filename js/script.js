@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const playBtns = document.querySelectorAll('.premium-members .play-btn');
 
     videos.forEach((video, index) => {
-        video.muted = true;
         video.play();
+        video.muted = true;
 
         setTimeout(function () {
             video.pause();
             video.muted = false;
-        }, 1);
+        }, 1); 
 
         video.addEventListener('pause', function () {
             playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
