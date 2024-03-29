@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     videos.forEach((video, index) => {
         video.muted = true;
+        video.play();
 
         setTimeout(function () {
             video.pause();
