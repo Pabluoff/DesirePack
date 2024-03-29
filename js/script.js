@@ -254,6 +254,13 @@ window.onload = function () {
     var adsModal = document.getElementById('ads-modal-container');
     adsModal.style.display = 'none';
     openAdsModalAfterDelay();
+
+    // Adiciona um evento de toque para iniciar a reprodução do vídeo
+    document.addEventListener('touchstart', function () {
+        var video = document.getElementById('ads-video');
+        if (!video.paused) return; // Se o vídeo já estiver reproduzindo, não faça nada
+        video.play();
+    });
 };
 
 document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
