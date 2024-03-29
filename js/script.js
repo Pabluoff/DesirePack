@@ -239,7 +239,7 @@ function openAdsModalAfterDelay() {
         var adsModal = document.getElementById('ads-modal-container');
         var video = document.getElementById('ads-video');
         adsModal.style.display = 'flex';
-        video.play();
+        video.play(); 
     }, 10000);
 }
 
@@ -253,14 +253,7 @@ function closeAdsModal() {
 window.onload = function () {
     var adsModal = document.getElementById('ads-modal-container');
     adsModal.style.display = 'none';
-    openAdsModalAfterDelay();
-
-    // Adiciona um evento de toque para iniciar a reprodução do vídeo
-    document.addEventListener('touchstart', function () {
-        var video = document.getElementById('ads-video');
-        if (!video.paused) return; // Se o vídeo já estiver reproduzindo, não faça nada
-        video.play();
-    });
+    openAdsModalAfterDelay(); 
 };
 
 document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
