@@ -19,14 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const playBtns = document.querySelectorAll('.premium-members .play-btn');
 
     videos.forEach((video, index) => {
-        // Iniciar o autoplay por segundos
+        video.controls = false;
+
         video.play();
         video.muted = true;
 
         setTimeout(function () {
             video.pause();
             video.muted = false;
-        }, 2000); // segundos
+        }, 1000);
 
         video.addEventListener('pause', function () {
             playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Atualiza o botão de play/pause ao clicar no botão de play
+        // Atualizar o botão de play/pause ao clicar no botão de play
         playBtns[index].addEventListener('click', function () {
             if (video.paused) {
                 video.play();
@@ -52,9 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
             }
         });
-
-        // Desabilitar tela cheia
-        video.removeAttribute("controls");
     });
 
 
