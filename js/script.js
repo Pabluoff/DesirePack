@@ -19,20 +19,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const playBtns = document.querySelectorAll('.premium-members .play-btn');
 
     videos.forEach((video, index) => {
-        video.controls = false;
+        // Remover os controles padrão
+        video.removeAttribute("controls");
 
-        video.play();
+        // Iniciar o autoplay por segundos
         video.muted = true;
 
+        // Definir o tempo para pausar e desmutar o vídeo
         setTimeout(function () {
-            video.pause();
-            video.muted = false;
-        }, 1000);
+            video.play().then(() => {
+                // Vídeo reproduzido com sucesso
+                video.muted = false;
+            }).catch((error) => {
+                // O autoplay não foi bem-sucedido, manipule o erro aqui
+                console.error('Erro ao reproduzir o vídeo:', error);
+            });
+        }, 2000); // 2 segundos
 
+        // Adicionar evento de pausa para atualizar o botão de play/pause
         video.addEventListener('pause', function () {
             playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
         });
 
+        // Adicionar evento de clique para controlar a reprodução do vídeo
         video.addEventListener('click', function () {
             if (video.paused) {
                 video.play();
