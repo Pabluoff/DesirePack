@@ -239,7 +239,7 @@ function openAdsModalAfterDelay() {
         var adsModal = document.getElementById('ads-modal-container');
         var video = document.getElementById('ads-video');
         adsModal.style.display = 'flex';
-        video.play(); 
+        video.play();
     }, 10000);
 }
 
@@ -253,7 +253,7 @@ function closeAdsModal() {
 window.onload = function () {
     var adsModal = document.getElementById('ads-modal-container');
     adsModal.style.display = 'none';
-    openAdsModalAfterDelay(); 
+    openAdsModalAfterDelay();
 };
 
 document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
