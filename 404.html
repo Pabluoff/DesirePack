@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -8,25 +8,58 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
         }
 
         .container {
-            text-align: center;
+            text-align: left;
+            padding-left: 29px;
+        }
+
+        .container h1 {
+            font-size: 39px;
+            margin-bottom: -5px;
+        }
+
+        .container p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .container a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #53a4ff;
+            text-decoration: none;
+            border: 2px solid #53a4ff;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container a:hover {
+            background-color: #53a4ff;
+            color: #ffffff;
+            border-color: #53a4ff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Opa, algo deu errado</h1>
+        <h1>Oops! Algo deu errado.</h1>
         <p>Mas não se preocupe, não é culpa sua.</p>
+        <a href="/">Ir para a página inicial</a>
     </div>
 </body>
 
