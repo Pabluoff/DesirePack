@@ -239,38 +239,41 @@ function openAdsModalAfterDelay() {
     setTimeout(function () {
         var adsModal = document.getElementById('ads-modal-container');
         var video = document.getElementById('ads-video');
-        adsModal.style.display = 'flex';
-        video.play(); 
+        if (adsModal && video) {
+            adsModal.style.display = 'flex';
+            video.play();
+        }
     }, 10000);
 }
 
 function closeAdsModal() {
     var adsModal = document.getElementById('ads-modal-container');
     var video = document.getElementById('ads-video');
-    adsModal.style.display = 'none';
-    video.pause();
+    if (adsModal && video) {
+        adsModal.style.display = 'none';
+        video.pause();
+    }
 }
 
 window.onload = function () {
     var adsModal = document.getElementById('ads-modal-container');
-    adsModal.style.display = 'none';
-    openAdsModalAfterDelay(); 
+    if (adsModal) {
+        adsModal.style.display = 'none';
+        openAdsModalAfterDelay();
+    }
 };
 
-document.getElementById('ads-modal-close').addEventListener('click', closeAdsModal);
-
-function unmuteVideoAfterDelay(video) {
-    var unmuteTimeout = setTimeout(function () {
-        video.muted = false;
-        clearTimeout(unmuteTimeout);
-    }, 1);
+var closeBtn = document.getElementById('ads-modal-close');
+if (closeBtn) {
+    closeBtn.addEventListener('click', closeAdsModal);
 }
 
 var video = document.querySelector('#ads-modal-container video');
-
-video.addEventListener('timeupdate', function () {
-    if (video.currentTime >= 0.001) {
-        video.muted = false;
-        video.removeEventListener('timeupdate', arguments.callee);
-    }
-});
+if (video) {
+    video.addEventListener('timeupdate', function () {
+        if (video.currentTime >= 0.001) {
+            video.muted = false;
+            video.removeEventListener('timeupdate', arguments.callee);
+        }
+    });
+}
