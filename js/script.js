@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
             video.pause();
             video.muted = false;
-        }, 1);
+        }, 2000);
 
         video.addEventListener('pause', function () {
             playBtns[index].innerHTML = '<i class="fas fa-play"></i>';
