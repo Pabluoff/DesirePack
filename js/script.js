@@ -23,8 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         video.muted = true;
 
         video.removeAttribute("controls");
-        video.setAttribute("playsinline", "");
-
+        
         setTimeout(function () {
             video.pause();
             video.muted = false;
